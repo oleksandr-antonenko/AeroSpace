@@ -1,12 +1,10 @@
-# AeroSpace (i3-style fork) [![Build](https://github.com/oleksandr-antonenko/AeroSpace/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/oleksandr-antonenko/AeroSpace/actions/workflows/build.yml)
+# i3Aero [![Build](https://github.com/oleksandr-antonenko/AeroSpace/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/oleksandr-antonenko/AeroSpace/actions/workflows/build.yml)
 
 <img src="./resources/Assets.xcassets/AppIcon.appiconset/icon.png" width="40%" align="right">
 
-A fork of [AeroSpace](https://github.com/nikitabobko/AeroSpace) with **i3-style auto-tiling** (spiral/dwindle layout) and a **master-stack** command.
+**i3Aero** is a fork of [AeroSpace](https://github.com/nikitabobko/AeroSpace) that adds **i3-style auto-tiling** (spiral/dwindle layout) and a **master-stack** command to the macOS tiling window manager.
 
-Upstream AeroSpace is an i3-like tiling window manager for macOS.
-
-## What this fork adds
+## Features
 
 ### Auto-tiling (spiral/dwindle layout)
 
@@ -36,7 +34,13 @@ alt-space = 'master-stack --cycle'
 | `--cycle` | Rotate the next window (by window ID order) into the master position |
 | `--workspace <workspace>` | Target a specific workspace |
 
-## Installation (from source)
+## Installation
+
+Download the latest release from [Releases](https://github.com/oleksandr-antonenko/AeroSpace/releases), unzip, and move `AeroSpace.app` to `/Applications`.
+
+After launch, grant accessibility permissions in **System Settings > Privacy & Security > Accessibility**.
+
+### Build from source
 
 ```bash
 git clone https://github.com/oleksandr-antonenko/AeroSpace.git
@@ -44,8 +48,6 @@ cd AeroSpace
 ./build-release.sh --codesign-identity -
 ./install-from-sources.sh --dont-rebuild
 ```
-
-After installation, grant accessibility permissions to AeroSpace in System Settings > Privacy & Security > Accessibility.
 
 ## Example config
 
@@ -94,7 +96,7 @@ alt-shift-3 = 'move-node-to-workspace 3'
 
 ## Upstream
 
-This fork is based on [nikitabobko/AeroSpace](https://github.com/nikitabobko/AeroSpace). See the upstream repo for full documentation:
+Based on [nikitabobko/AeroSpace](https://github.com/nikitabobko/AeroSpace). Full documentation for the base features:
 
 - [AeroSpace Guide](https://nikitabobko.github.io/AeroSpace/guide)
 - [AeroSpace Commands](https://nikitabobko.github.io/AeroSpace/commands)
@@ -104,24 +106,13 @@ Videos:
 - [YouTube 91 sec Demo](https://www.youtube.com/watch?v=UOl7ErqWbrk)
 - [YouTube Guide by Josean Martinez](https://www.youtube.com/watch?v=-FoWClVHG5g)
 
-## Upstream key features
-
-- Tiling window manager based on a [tree paradigm](https://nikitabobko.github.io/AeroSpace/guide#tree)
-- [i3](https://i3wm.org/) inspired
-- Fast workspaces switching without animations and without the necessity to disable SIP
-- AeroSpace employs its [own emulation of virtual workspaces](https://nikitabobko.github.io/AeroSpace/guide#emulation-of-virtual-workspaces) instead of relying on native macOS Spaces due to [their considerable limitations](https://nikitabobko.github.io/AeroSpace/guide#emulation-of-virtual-workspaces)
-- Plain text configuration (dotfiles friendly). See: [default-config.toml](https://nikitabobko.github.io/AeroSpace/guide#default-config)
-- CLI first (manpages and shell completion included)
-- Doesn't require disabling SIP (System Integrity Protection)
-- [Proper multi-monitor support](https://nikitabobko.github.io/AeroSpace/guide#multiple-monitors) (i3-like paradigm)
-
 ## macOS compatibility table
 
 |                                                                                | macOS 13 (Ventura) | macOS 14 (Sonoma) | macOS 15 (Sequoia) | macOS 26 (Tahoe) |
 | ------------------------------------------------------------------------------ | ------------------ | ----------------- | ------------------ | ---------------- |
-| AeroSpace binary runs on ...                                                   | +                  | +                 | +                  | +                |
-| AeroSpace debug build from sources is supported on ...                         |                    | +                 | +                  | +                |
-| AeroSpace release build from sources is supported on ... (Requires Xcode 26+)  |                    |                   | +                  | +                |
+| Binary runs on ...                                                             | +                  | +                 | +                  | +                |
+| Debug build from sources supported on ...                                      |                    | +                 | +                  | +                |
+| Release build from sources supported on ... (Requires Xcode 26+)              |                    |                   | +                  | +                |
 
 ## Related projects
 
